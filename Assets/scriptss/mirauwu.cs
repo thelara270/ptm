@@ -4,32 +4,44 @@ using UnityEngine;
 
 public class mirauwu : MonoBehaviour
 {
-    //mover un personaje en tercera persona
+    [Header("Referencias")]
     [SerializeField] Joystick joystickmove;
     [SerializeField] Transform cross;
-    [SerializeField] float speed;
-
-    float x;
-    float z;
-    Vector3 move;
     [SerializeField] CharacterController controller;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Header("Parámetros de movimiento")]
+    [SerializeField] float speed = 5f;
+    [SerializeField] float suavizado = 10f;
 
-    // Update is called once per frame
+    private Vector3 direccionDeseada;
+    private Vector3 velocidadActual;
+
     void Update()
     {
-        Move();
+        MoverJugador();
     }
-    public void Move()
+
+    void MoverJugador()
     {
-        x = joystickmove.Horizontal + Input.GetAxis("Horizontal");
-        z = joystickmove.Vertical + Input.GetAxis("Vertical");
-        move = cross.right * x + cross.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
+        float x = joystickmove.Horizontal + Input.GetAxis("Horizontal");
+        float z = joystickmove.Vertical + Input.GetAxis("Vertical");
+
+        Vector3 input = new Vector3(x, 0f, z);
+
+        if (input.magnitude > 0.1f)
+        {
+            // Movimiento en la dirección del "cross"
+            direccionDeseada = cross.right * input.x + cross.forward * input.z;
+            direccionDeseada.y = 0f;
+            direccionDeseada.Normalize();
+        }
+        else
+        {
+            direccionDeseada = Vector3.zero;
+        }
+
+        // Suavizar movimiento con Lerp
+        velocidadActual = Vector3.Lerp(velocidadActual, direccionDeseada * speed, Time.deltaTime * suavizado);
+        controller.Move(velocidadActual * Time.deltaTime);
     }
 }

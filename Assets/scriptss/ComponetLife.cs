@@ -13,6 +13,15 @@ public class ComponetLife : MonoBehaviour
     [SerializeField] float vidaactural;
     [SerializeField] GameObject die;
 
+    [SerializeField] Renderer cuerpoJugadorP;
+    [SerializeField] Renderer cuerpoJugadorF;
+    [SerializeField] Renderer cuerpoJugadorM;
+    [SerializeField] Renderer cuerpoJugadorD;
+    [SerializeField] Color colorDaño = Color.red;
+    [SerializeField] float tiempoColor = 0.2f;
+
+    private Color colorOriginal;
+
     audiomanagerc audimager;
 
     private void Awake()
@@ -21,6 +30,11 @@ public class ComponetLife : MonoBehaviour
     }
     private void Start()
     {
+        colorOriginal = cuerpoJugadorP.material.color;
+        colorOriginal = cuerpoJugadorF.material.color;
+        colorOriginal = cuerpoJugadorM.material.color;
+        colorOriginal = cuerpoJugadorD.material.color;
+
         vidamaxima = 100f;
     }
 
@@ -34,6 +48,7 @@ public class ComponetLife : MonoBehaviour
     public void damagerecibe(float damage)
     {
         heal -= damage;
+        StartCoroutine(CambiarColorTemporal());
         if (heal <= 0)
         {
             die.SetActive(true);
@@ -42,5 +57,20 @@ public class ComponetLife : MonoBehaviour
             audimager.musicsource.Pause();
 
         }
+    }
+
+    IEnumerator CambiarColorTemporal()
+    {
+        cuerpoJugadorP.material.color = colorDaño;
+        cuerpoJugadorF.material.color = colorDaño;
+        cuerpoJugadorM.material.color = colorDaño;
+        cuerpoJugadorD.material.color = colorDaño;
+
+        yield return new WaitForSeconds(tiempoColor);
+        cuerpoJugadorP.material.color = colorOriginal;
+        cuerpoJugadorF.material.color = colorOriginal;
+        cuerpoJugadorM.material.color = colorOriginal;
+        cuerpoJugadorD.material.color = colorOriginal;
+
     }
 }
