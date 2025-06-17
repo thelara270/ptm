@@ -7,26 +7,34 @@ public class punta : MonoBehaviour
 {
     // puntuación del jugador en pantalla
     [SerializeField] private float score;
+    [SerializeField] private float scoreEnd;
 
     [SerializeField] TextMeshProUGUI m_TextMeshPro;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] TextMeshProUGUI scoreEndText;
     public float ScoreActual()
     {
         return score;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        m_TextMeshPro.text = score.ToString("0");
+        scoreEnd = score;
+        scoreEndText.text= scoreEnd.ToString();
+        m_TextMeshPro.text = score.ToString();
     }
 
     public void scoremas(float currentscore)
     {
         score += currentscore;
+
+        // Actualiza el máximo si se supera
+        float mejorPuntaje = PlayerPrefs.GetFloat("HighScore", 0f);
+        if (score > mejorPuntaje)
+        {
+            PlayerPrefs.SetFloat("HighScore", score);
+            PlayerPrefs.Save();
+        }
+
     }
+
 }

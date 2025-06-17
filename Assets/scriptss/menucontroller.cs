@@ -49,7 +49,6 @@ public class menucontroller : MonoBehaviour
 
     public void unpause()
     {
-        
         Time.timeScale = 1.0f;
         audiomanager.sfxsource.UnPause();
     }
@@ -66,7 +65,6 @@ public class menucontroller : MonoBehaviour
     IEnumerator reloadscene()
     {
         fade.SetTrigger("fadeout");
-
         yield return new WaitForSeconds(fadeout.length);
         SceneManager.LoadScene(1);
     }
@@ -74,17 +72,21 @@ public class menucontroller : MonoBehaviour
 
     public void mainmenu()
     {
+        Time.timeScale = 1f;
+        Debug.Log("esta vaina sirve");
         StartCoroutine(scenemenu());
     }
     IEnumerator scenemenu()
     {
+        Time.timeScale=1.0f;
         fade.SetTrigger("fadeout");
 
         yield return new WaitForSeconds(fadeout.length);
-        SceneManager.LoadScene("mainmenu");
+        SceneManager.LoadScene(0);
     }
     IEnumerator scenestrasicion()
     {
+        Time.timeScale = 1f;
         audiomanager.playSFX(audiomanager.play);
         fade.SetTrigger("fadeout");
         
