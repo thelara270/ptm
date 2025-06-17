@@ -753,8 +753,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   joystickmove: {fileID: 892049945}
   cross: {fileID: 1343517575}
-  speed: 1000
   controller: {fileID: 1343517576}
+  speed: 1000
+  suavizado: 100
 --- !u!4 &83325610
 Transform:
   m_ObjectHideFlags: 0
@@ -1440,6 +1441,7 @@ GameObject:
   - component: {fileID: 240964786}
   - component: {fileID: 240964785}
   - component: {fileID: 240964784}
+  - component: {fileID: 240964792}
   m_Layer: 0
   m_Name: player MegaShot
   m_TagString: Player
@@ -1490,7 +1492,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 240964783}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7759eba132735044a5aa2e82a2b732d, type: 3}
   m_Name: 
@@ -1612,6 +1614,20 @@ Transform:
   - {fileID: 1914485326}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &240964792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240964783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d84a26385b11042b0ca3ae46a010ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 892049945}
+  velocidadRotacion: 10
 --- !u!4 &290715211 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: aeea67bbf6f68814386e335f9acb38c3,
@@ -3205,6 +3221,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1741473573}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &774665286 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 4bbd839b9a04d3845bfae3bd7765eeff,
+    type: 3}
+  m_PrefabInstance: {fileID: 1741473573}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &776538704
 GameObject:
   m_ObjectHideFlags: 0
@@ -4450,6 +4472,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1053295843}
   m_PrefabAsset: {fileID: 0}
+--- !u!23 &1058170190 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 77fe753941a1a444ea44be9682a1c0d4,
+    type: 3}
+  m_PrefabInstance: {fileID: 2141023982}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1067950353
 GameObject:
   m_ObjectHideFlags: 0
@@ -4712,6 +4740,12 @@ Transform:
 --- !u!4 &1209079434 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: ac3c76591f462d3428058949506357a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 875557306}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1209079435 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: ac3c76591f462d3428058949506357a2,
     type: 3}
   m_PrefabInstance: {fileID: 875557306}
   m_PrefabAsset: {fileID: 0}
@@ -6951,6 +6985,12 @@ MonoBehaviour:
   vidamaxima: 0
   vidaactural: 0
   die: {fileID: 2093188855}
+  cuerpoJugadorP: {fileID: 1209079435}
+  cuerpoJugadorF: {fileID: 1058170190}
+  cuerpoJugadorM: {fileID: 1914485327}
+  cuerpoJugadorD: {fileID: 774665286}
+  "colorDa\xF1o": {r: 0.5471698, g: 0.08517267, b: 0.08517267, a: 1}
+  tiempoColor: 0.5
 --- !u!65 &1607692506
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8268,6 +8308,7 @@ GameObject:
   - component: {fileID: 1744444448}
   - component: {fileID: 1744444446}
   - component: {fileID: 1744444454}
+  - component: {fileID: 1744444455}
   m_Layer: 0
   m_Name: Player Metralleta
   m_TagString: Player
@@ -8303,7 +8344,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1744444445}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7759eba132735044a5aa2e82a2b732d, type: 3}
   m_Name: 
@@ -8440,6 +8481,20 @@ MonoBehaviour:
   time: 0.08
   controller: {fileID: 669007006}
   audiomanager: {fileID: 818385108}
+--- !u!114 &1744444455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1744444445}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d84a26385b11042b0ca3ae46a010ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 892049945}
+  velocidadRotacion: 10
 --- !u!1 &1754698158
 GameObject:
   m_ObjectHideFlags: 0
@@ -8875,6 +8930,7 @@ GameObject:
   - component: {fileID: 1836144509}
   - component: {fileID: 1836144508}
   - component: {fileID: 1836144507}
+  - component: {fileID: 1836144515}
   m_Layer: 0
   m_Name: player DobleSho
   m_TagString: Player
@@ -8925,7 +8981,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836144506}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7759eba132735044a5aa2e82a2b732d, type: 3}
   m_Name: 
@@ -9047,6 +9103,20 @@ Transform:
   - {fileID: 774665285}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1836144515
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836144506}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d84a26385b11042b0ca3ae46a010ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 892049945}
+  velocidadRotacion: 10
 --- !u!1 &1842336380
 GameObject:
   m_ObjectHideFlags: 0
@@ -9063,6 +9133,7 @@ GameObject:
   - component: {fileID: 1842336387}
   - component: {fileID: 1842336388}
   - component: {fileID: 1842336389}
+  - component: {fileID: 1842336390}
   m_Layer: 0
   m_Name: player principal
   m_TagString: Player
@@ -9191,7 +9262,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1842336380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e7759eba132735044a5aa2e82a2b732d, type: 3}
   m_Name: 
@@ -9235,6 +9306,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1842336390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1842336380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d84a26385b11042b0ca3ae46a010ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  joystick: {fileID: 892049945}
+  velocidadRotacion: 10
 --- !u!1001 &1865294838
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9357,6 +9442,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+        type: 3}
+      propertyPath: axisOptions
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9500,6 +9590,12 @@ Transform:
 --- !u!4 &1914485326 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7ee1df9f85f6c3241bd07c8b64480dd5,
+    type: 3}
+  m_PrefabInstance: {fileID: 546278518}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1914485327 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7ee1df9f85f6c3241bd07c8b64480dd5,
     type: 3}
   m_PrefabInstance: {fileID: 546278518}
   m_PrefabAsset: {fileID: 0}
