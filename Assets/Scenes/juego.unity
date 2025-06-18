@@ -926,7 +926,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1113, y: -194}
+  m_AnchoredPosition: {x: 1101, y: -193.99988}
   m_SizeDelta: {x: 526.96, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &100591163
@@ -3567,7 +3567,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.0000305, y: -88}
+  m_AnchoredPosition: {x: 2.0000305, y: -153.99994}
   m_SizeDelta: {x: 187.1827, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &745892302
@@ -5700,7 +5700,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2, y: -219}
+  m_AnchoredPosition: {x: 2, y: -285}
   m_SizeDelta: {x: 187.1827, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256869148
@@ -6922,7 +6922,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Score \n"
+  m_text: Puntaje
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd00e09c01779a4c8f0019bc92909a2, type: 2}
   m_sharedMaterial: {fileID: 7667479337098410653, guid: dbd00e09c01779a4c8f0019bc92909a2,
@@ -6956,7 +6956,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 140
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -7815,7 +7815,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -8508,7 +8508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: reload
+  m_text: Reintentar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd00e09c01779a4c8f0019bc92909a2, type: 2}
   m_sharedMaterial: {fileID: 7667479337098410653, guid: dbd00e09c01779a4c8f0019bc92909a2,
@@ -8542,7 +8542,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 16
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -9023,7 +9023,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 514, y: -193.99997}
+  m_AnchoredPosition: {x: 453, y: -193.99997}
   m_SizeDelta: {x: 208.10901, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1711201892
@@ -9046,7 +9046,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'score:'
+  m_text: 'Puntaje:'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd00e09c01779a4c8f0019bc92909a2, type: 2}
   m_sharedMaterial: {fileID: 7667479337098410653, guid: dbd00e09c01779a4c8f0019bc92909a2,
@@ -9700,8 +9700,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000019073, y: 581}
-  m_SizeDelta: {x: 181.4847, y: 50}
+  m_AnchoredPosition: {x: 4.002, y: 538}
+  m_SizeDelta: {x: 191.1866, y: 59.702}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1754698161
 MonoBehaviour:
@@ -9723,9 +9723,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'you died
-
-'
+  m_text: HAZ Muerto
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dbd00e09c01779a4c8f0019bc92909a2, type: 2}
   m_sharedMaterial: {fileID: 7667479337098410653, guid: dbd00e09c01779a4c8f0019bc92909a2,
@@ -9753,13 +9751,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.35
+  m_fontSize: 34.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 18
-  m_fontSizeMax: 72
-  m_fontStyle: 1
+  m_fontSizeMax: 100
+  m_fontStyle: 17
   m_HorizontalAlignment: 1
   m_VerticalAlignment: 256
   m_textAlignment: 65535
