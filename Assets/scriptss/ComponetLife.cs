@@ -20,6 +20,8 @@ public class ComponetLife : MonoBehaviour
     [SerializeField] Color colorDaño = Color.red;
     [SerializeField] float tiempoColor = 0.2f;
 
+    [SerializeField] GameObject jugadores;
+
     private Color colorOriginal;
 
     audiomanagerc audimager;
@@ -55,7 +57,7 @@ public class ComponetLife : MonoBehaviour
             audimager.sfxsource.Pause();
             audimager.sfxsource.volume = 0f;
             audimager.musicsource.Pause();
-
+            jugadores.SetActive(false);
         }
     }
 

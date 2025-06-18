@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   speed: 0.05
-  heal: 100
+  heal: 250
   damage: 5
   scoregif: 10
   cubesPerAxis: 4

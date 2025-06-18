@@ -11,26 +11,12 @@ public class menucontroller : MonoBehaviour
     audiomanagerc audiomanager;
     [SerializeField] AnimationClip fadeout;
     
-    
-
     private void Awake()
     {
         audiomanager = GameObject.FindGameObjectWithTag("audio").GetComponent<audiomanagerc>();
     }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-      
-    }
     public void pause()
     {
-
         Time.timeScale = 0f;
         audiomanager.sfxsource.Pause();
     }
@@ -54,10 +40,6 @@ public class menucontroller : MonoBehaviour
     }
   
 
-    public void sceneload()
-    {
-        StartCoroutine(scenestrasicion());
-    }
     public void reload()
     {
         StartCoroutine(reloadscene());
@@ -68,7 +50,6 @@ public class menucontroller : MonoBehaviour
         yield return new WaitForSeconds(fadeout.length);
         SceneManager.LoadScene(1);
     }
-
 
     public void mainmenu()
     {
@@ -84,6 +65,26 @@ public class menucontroller : MonoBehaviour
         yield return new WaitForSeconds(fadeout.length);
         SceneManager.LoadScene(0);
     }
+
+    public void Intro()
+    {
+        Time.timeScale = 1f;
+        Debug.Log("esta vaina sirve");
+        StartCoroutine(sceneIntro());
+    }
+    IEnumerator sceneIntro()
+    {
+        Time.timeScale = 1.0f;
+        fade.SetTrigger("fadeout");
+
+        yield return new WaitForSeconds(fadeout.length);
+        SceneManager.LoadScene(1);
+    }
+
+    public void sceneload()
+    {
+        StartCoroutine(scenestrasicion());
+    }
     IEnumerator scenestrasicion()
     {
         Time.timeScale = 1f;
@@ -91,9 +92,8 @@ public class menucontroller : MonoBehaviour
         fade.SetTrigger("fadeout");
         
         yield return new WaitForSeconds(fadeout.length);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
-
     public void exit()
     {
         Application.Quit();

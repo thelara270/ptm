@@ -119,7 +119,10 @@ PrefabInstance:
       value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 5220688621832982283, guid: 56548862fad2eee43af9ffae8a3d94b4, type: 3}
+    - {fileID: 6710786896454752380, guid: 56548862fad2eee43af9ffae8a3d94b4, type: 3}
+    - {fileID: 7564932829538097355, guid: 56548862fad2eee43af9ffae8a3d94b4, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 6847596309895757485, guid: 56548862fad2eee43af9ffae8a3d94b4,
@@ -155,8 +158,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 0}
   speed: 0.05
-  heal: 200
-  damage: 15
+  heal: 250
+  damage: 10
   scoregif: 25
   cubesPerAxis: 4
   delay: 0.1

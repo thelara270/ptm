@@ -11,16 +11,14 @@ public class spawncontrolertime : MonoBehaviour
     [SerializeField] GameObject spawn4;
     [SerializeField] GameObject spawn5;
     [SerializeField] GameObject spawn6;
+    [SerializeField] GameObject spawn7;
+    [SerializeField] GameObject spawn8;
+    [SerializeField] GameObject spawn9;
+    [SerializeField] GameObject spawn10;
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(firstspawn());
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     IEnumerator firstspawn()
@@ -47,9 +45,27 @@ public class spawncontrolertime : MonoBehaviour
 
         spawn5.gameObject.SetActive(true);
 
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(10f);
 
         spawn6.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(6f);
+
+        spawn7.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(4f);
+
+        spawn8.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(2f);
+
+        spawn9.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(6f);
+
+        spawn10.gameObject.SetActive(true);
+
+        yield return new WaitForSeconds(8f);
 
     }
 }

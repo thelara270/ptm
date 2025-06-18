@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class misil : MonoBehaviour
 {
-    [SerializeField] float speed = 10f;
-    [SerializeField] float damage = 20f;
+    [SerializeField] float speed;
+    [SerializeField] float damage;
 
-    float velocidadExtra = 1f;
+    float velocidadExtra;
     float dañoOriginal;
     float velocidadOriginal;
     Vector3 escalaOriginal;

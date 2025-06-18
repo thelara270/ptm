@@ -33,6 +33,13 @@ public class FasterShot : MonoBehaviour
         GameObject bullet = bulletpoll.Instace.requestbullet();
         bullet.transform.position = controller.position;
         bullet.transform.rotation = controller.rotation;
+        misil m = bullet.GetComponent<misil>();
+        if (m != null)
+        {
+            m.SetTamaño(1f);         // Cambia tamaño visual
+            m.SetDamage(0.5f);        // Aumenta daño
+            m.SetVelocidadExtra(1f);
+        }
 
         Invoke(nameof(Disparar), time);
     }

@@ -17,7 +17,20 @@ public class DobleShot : instanciador
         GameObject bala2 = bulletpoll.Instace.requestbullet();
         bala2.transform.position = controller.position - controller.right * offset;
         bala2.transform.rotation = controller.rotation;
-
+        misil m = bala1.GetComponent<misil>();
+        if (m != null)
+        {
+            m.SetTamaño(1f);         // Cambia tamaño visual
+            m.SetDamage(2f);        // Aumenta daño
+            m.SetVelocidadExtra(1f);
+        }
+        misil m2 = bala2.GetComponent<misil>();
+        if (m != null)
+        {
+            m.SetTamaño(1f);         // Cambia tamaño visual
+            m.SetDamage(2f);        // Aumenta daño
+            m.SetVelocidadExtra(1f);
+        }
         Invoke(nameof(Disparar), time);
     }
 }
