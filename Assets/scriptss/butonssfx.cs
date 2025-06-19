@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class butonssfx : MonoBehaviour
-    //reproduce el sonido cuando le das al boton
+//reproduce el sonido cuando le das al boton
 {
     audiomanagerc audiomanager;
 
@@ -11,8 +11,8 @@ public class butonssfx : MonoBehaviour
     {
         audiomanager = GameObject.FindGameObjectWithTag("audio").GetComponent<audiomanagerc>();
     }
-    
-   
+
+
     public void selct()
     {
         audiomanager.playSFX(audiomanager.butonselect);
