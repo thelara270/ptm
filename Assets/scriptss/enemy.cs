@@ -9,7 +9,7 @@ public class enemy : MonoBehaviour
     [SerializeField] float speed = 0.05f;
     [SerializeField] float heal;
     [SerializeField] float damage = 5;
-    [SerializeField] float scoregif;
+    [SerializeField] int scoregif;
     punta getscore;
 
     public int cubesPerAxis = 8;    // Número de cubos en cada eje (x, y, z)

@@ -1,9 +1,12 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ActivyPanelPower : MonoBehaviour
 {
     [Header("Paneles UI")]
     [SerializeField] GameObject panelPowerUps;
+    [SerializeField] GameObject panelPowerM;
+    [SerializeField] GameObject panelPowerF;
+    [SerializeField] GameObject panelPowerD;
     [SerializeField] GameObject panelGame;
     [SerializeField] GameObject joystick;
 
@@ -31,14 +34,64 @@ public class ActivyPanelPower : MonoBehaviour
     {
         if (scoreSystem != null && scoreSystem.ScoreActual() >= siguientePowerUp)
         {
-            AbrirPanelPowerUp();
+            if (jugadorActivo.activeSelf)
+            {
+                AbrirPanelPowerUp();
+            }
+            if (jugadorMegaShot.activeSelf)
+            {
+                AbrirPanelPowerUpM();
+            }
+            if (jugadorFastShot.activeSelf)
+            {
+                AbrirPanelPowerUpF();
+            }
+            if (jugadorDobleShot.activeSelf)
+            {
+                AbrirPanelPowerUpD();
+            }
+
+
+
         }
     }
 
     void AbrirPanelPowerUp()
     {
+
         Time.timeScale = 0f;
         panelPowerUps.SetActive(true);
+        panelGame.SetActive(false);
+        joystick.SetActive(false);
+
+    }
+
+    void AbrirPanelPowerUpM()
+    {
+
+        Time.timeScale = 0f;
+        panelPowerM.SetActive(true);
+        panelPowerUps.SetActive(false );
+        panelGame.SetActive(false);
+        joystick.SetActive(false);
+    }
+
+    void AbrirPanelPowerUpF()
+    {
+
+        Time.timeScale = 0f;
+        panelPowerF.SetActive(true);
+        panelPowerUps.SetActive(false);
+        panelGame.SetActive(false);
+        joystick.SetActive(false);
+
+    }
+    void AbrirPanelPowerUpD()
+    {
+
+        Time.timeScale = 0f;
+        panelPowerD.SetActive(true);
+        panelPowerUps.SetActive(false);
         panelGame.SetActive(false);
         joystick.SetActive(false);
     }
@@ -47,6 +100,10 @@ public class ActivyPanelPower : MonoBehaviour
     {
         Time.timeScale = 1f;
         panelPowerUps.SetActive(false);
+        panelPowerM.SetActive(false);
+        panelPowerD.SetActive(false);
+        panelPowerF.SetActive(false);
+
         panelGame.SetActive(true);
         joystick.SetActive(true);
         siguientePowerUp += (int)puntosCadaPowerUp;

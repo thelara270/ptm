@@ -6,12 +6,12 @@ using TMPro;
 public class punta : MonoBehaviour
 {
     // puntuación del jugador en pantalla
-    [SerializeField] private float score;
-    [SerializeField] private float scoreEnd;
+    [SerializeField] private int score;
+    [SerializeField] private int scoreEnd;
 
     [SerializeField] TextMeshProUGUI m_TextMeshPro;
     [SerializeField] TextMeshProUGUI scoreEndText;
-    public float ScoreActual()
+    public int ScoreActual()
     {
         return score;
     }
@@ -23,7 +23,7 @@ public class punta : MonoBehaviour
         m_TextMeshPro.text = score.ToString();
     }
 
-    public void scoremas(float currentscore)
+    public void scoremas(int currentscore)
     {
         score += currentscore;
 
